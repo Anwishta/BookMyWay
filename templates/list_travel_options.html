@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">All Travel Options</h2>
+  <p class="text-center text-muted mb-3">Filter and click on a row to book your ticket</p>
+
+  <!-- Filter Form -->
+  <form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+      {{ form.travel_type.label_tag }}{{ form.travel_type }}
+    </div>
+    <div class="col-md-3">
+      {{ form.source.label_tag }}{{ form.source }}
+    </div>
+    <div class="col-md-3">
+      {{ form.destination.label_tag }}{{ form.destination }}
+    </div>
+    <div class="col-md-3">
+      {{ form.departure_date.label_tag }}{{ form.departure_date }}
+    </div>
+    <div class="col-md-12 text-center">
+      <button type="submit" class="btn btn-primary">Apply Filters</button>
+      <a href="{% url 'list_travel_options' %}" class="btn btn-secondary ms-2">Reset</a>
+    </div>
+  </form>
+
+  <!-- Travel Options Table -->
+  <table class="table table-bordered table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Type</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Date & Time</th>
+        <th>Price</th>
+        <th>Available Seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for option in options %}
+        {% if option.pk %}
+        <tr onclick="window.location='{% url 'book_travel_option' travel_id=option.pk %}'" style="cursor: pointer;">
+          <td>{{ option.travel_type }}</td>
+          <td>{{ option.source }}</td>
+          <td>{{ option.destination }}</td>
+          <td>{{ option.datetime|date:"Y-m-d" }} {{ option.datetime|time:"H:i" }}</td>
+          <td>{{ option.price }}</td>
+          <td>{{ option.available_seats }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="6" class="text-danger">Invalid option with missing ID</td>
+        </tr>
+        {% endif %}
+      {% empty %}
+        <tr><td colspan="6">No options found</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

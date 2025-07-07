@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container mt-5">
+  <h1>Select from varieties of destinations!</h1>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" class="card-img-top" alt="Beach">
+        <div class="card-body">
+          <p class="card-text">Relax on pristine beaches with crystal-clear waters and warm sun.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'list_travel_options' %}" class="btn btn-sm btn-success">Book Now</a>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-body-secondary">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="https://images.unsplash.com/photo-1750059397834-5b359a05dba0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Mountain">
+        <div class="card-body">
+          <p class="card-text">Adventure awaits in the mountains — perfect for hiking and camping.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'list_travel_options' %}" class="btn btn-sm btn-success">Book Now</a>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-body-secondary">12 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="https://plus.unsplash.com/premium_photo-1740520773752-1f498203b16d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="City">
+        <div class="card-body">
+          <p class="card-text">Explore historic European cities full of charm, culture, and cuisine.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'list_travel_options' %}" class="btn btn-sm btn-success">Book Now</a>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-body-secondary">7 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800" class="card-img-top" alt="Desert">
+        <div class="card-body">
+          <p class="card-text">Experience the wonders of the desert with camel rides and dunes.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'list_travel_options' %}" class="btn btn-sm btn-success">Book Now</a>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-body-secondary">15 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="https://images.unsplash.com/photo-1750409221671-d925a6d7126c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Forest">
+        <div class="card-body">
+          <p class="card-text">Wander into lush green forests and discover wildlife in its habitat.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'list_travel_options' %}" class="btn btn-sm btn-success">Book Now</a>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-body-secondary">10 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="https://images.unsplash.com/photo-1750059397834-5b359a05dba0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Snow">
+        <div class="card-body">
+          <p class="card-text">Cozy up in snowy getaways and enjoy skiing or hot cocoa by the fire.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'list_travel_options' %}" class="btn btn-sm btn-success">Book Now</a>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-body-secondary">14 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock body %}

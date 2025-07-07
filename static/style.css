@@ -1,0 +1,17 @@
+
+  body {
+    background: linear-gradient(to right, #e0f7fa, #f1f8e9); /* Teal to light green gradient */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+.btn-gradient {
+    background: linear-gradient(45deg, #ff6a00, #fddb00, #00c3ff); /* Orange → Yellow → Blue */
+    background-size: 200% 200%;
+    border: none;
+    transition: background-position 0.5s ease;
+  }
+
+  .btn-gradient:hover {
+    background-position: right center;
+  }

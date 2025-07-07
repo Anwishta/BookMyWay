@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-5 text-center">
+    <h2 class="text-success mb-3">🎉 Booking Confirmed!</h2>
+    <p class="lead mb-4">Your ticket has been successfully booked.</p>
+
+    <a href="{% url 'view_bookings' %}" class="btn btn-success">View My Bookings</a>
+</div>
+{% endblock %}

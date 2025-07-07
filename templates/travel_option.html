@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow p-4 w-100" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">Add Travel Option</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success w-100">Add Travel Option</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

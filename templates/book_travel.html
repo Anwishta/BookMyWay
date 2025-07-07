@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container mt-5">
+  <div class="card shadow-sm p-4" style="max-width: 600px; margin: auto;">
+    
+    <!-- Travel Option Summary -->
+    <h4 class="mb-3 text-center">Confirm Your Booking</h4>
+    <div class="mb-4">
+      <h5>Selected Travel Option</h5>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>Type:</strong> {{ travel_option.travel_type }}</li>
+        <li class="list-group-item"><strong>From:</strong> {{ travel_option.source }}</li>
+        <li class="list-group-item"><strong>To:</strong> {{ travel_option.destination }}</li>
+        <li class="list-group-item"><strong>Date:</strong> {{ travel_option.departure_date }}</li>
+        <li class="list-group-item"><strong>Time:</strong> {{ travel_option.departure_time }}</li>
+        <li class="list-group-item"><strong>Price per seat:</strong> ₹{{ travel_option.price }}</li>
+        <li class="list-group-item"><strong>Available Seats:</strong> {{ travel_option.available_seats }}</li>
+      </ul>
+    </div>
+
+    <!-- Booking Form -->
+    <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="id_number_of_seats" class="form-label">Number of Seats<span class="text-danger">*</span></label>
+        {{ form.number_of_seats }}
+      </div>
+
+      {% if form.errors %}
+        <div class="alert alert-danger">
+          {{ form.errors }}
+        </div>
+      {% endif %}
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-success">Confirm Booking</button>
+        <a href="{% url 'list_travel_options' %}" class="btn btn-outline-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

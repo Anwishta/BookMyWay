@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+  <div class="card shadow p-4" style="max-width: 500px; margin: auto;">
+    <!-- Progress Indicator -->
+    <div class="d-flex justify-content-center mb-4">
+      <div class="step bg-success text-white rounded-circle text-center me-2" style="width: 30px; height: 30px; line-height: 30px;">1</div>
+      <div class="step bg-light text-muted rounded-circle text-center me-2" style="width: 30px; height: 30px; line-height: 30px;">2</div>
+      <div class="step bg-light text-muted rounded-circle text-center" style="width: 30px; height: 30px; line-height: 30px;">3</div>
+    </div>
+
+    <!-- Form Header -->
+    <h4 class="text-center mb-3">Update Account </h4>
+
+    <!-- Form Starts -->
+    <form method="POST">
+      {% csrf_token %}
+
+      
+      <div class="mb-3">
+        <label for="id_username" class="form-label">Name<span class="text-danger">*</span></label>
+        {{ form.username }}
+      </div>
+
+      <div class="mb-3">
+        <label for="id_email" class="form-label">Email<span class="text-danger">*</span></label>
+        {{ form.email }}
+      </div>
+
+      <div class="mb-3">
+        <label for="id_phone" class="form-label">Phone <span class="text-muted">(optional)</span></label>
+        {{ form.phone }}
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="d-flex justify-content-between align-items-center">
+    <a href="{% url 'view_bookings' %}" class="btn btn-primary text-white">My Bookings</a>
+     {% if user.is_staff or user.is_superuser %}
+    <a href="{% url 'add_travel_option' %}" class="btn btn-success text-white">Add Travel Info</a>
+  {% endif %}
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

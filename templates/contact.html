@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block body %}
+
+<!-- Background Banner -->
+<div class="container-fluid px-0 mx-0">
+  <img
+    src="https://images.unsplash.com/photo-1750779940698-f24b28d76fd9?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    class="d-block w-100"
+    style="height: 200px; object-fit: cover;"
+    alt="Full-width background"
+  />
+</div>
+
+<!-- Contact Form Section -->
+<div class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">Contact Us</h2>
+<form method="post" action="/contact"> 
+    {% csrf_token %}
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your phone number">
+  </div>
+
+  <div class="mb-3">
+    <label for="desc" class="form-label">Your reason for contacting us</label>
+    <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-primary px-4">Submit</button>
+  </div>
+</div>
+</form>
+{% endblock body %}
