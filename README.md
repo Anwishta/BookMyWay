@@ -1,7 +1,7 @@
 
 ---
 
-````markdown
+
 # 🌍 BookMyWay – Travel Booking Web App
 
 BookMyWay is a full-stack Django-based travel booking platform that allows users to register, log in, browse various travel options (flights, trains, buses), and make bookings with ease.
