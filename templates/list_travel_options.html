@@ -30,7 +30,7 @@
     <table class="table table-bordered table-hover table-striped">
       <thead class="table-dark">
         <tr>
-          <th>Type</th>
+          {% comment %} <th>Type</th> {% endcomment %}
           <th>Source</th>
           <th>Destination</th>
           <th>Date & Time</th>
@@ -42,7 +42,7 @@
         {% for option in options %}
           {% if option.pk %}
           <tr onclick="window.location='{% url 'book_travel_option' travel_id=option.pk %}'" style="cursor: pointer;">
-            <td>{{ option.travel_type }}</td>
+            {% comment %} <td>{{ option.travel_type }}</td> {% endcomment %}
             <td>{{ option.source }}</td>
             <td>{{ option.destination }}</td>
             <td>{{ option.datetime|date:"Y-m-d" }} {{ option.datetime|time:"H:i" }}</td>
